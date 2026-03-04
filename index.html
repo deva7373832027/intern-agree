@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>InternAlert - Find Internships</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Side Drawer Navigation -->
+    <div id="sideDrawer" class="side-drawer" aria-hidden="true">
+        <div class="mobile-menu">
+            <button onclick="showSaved()">View Saved</button>
+            <button onclick="toggleMenu()">Close Menu</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Header with User Greeting -->
+        <div class="header">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h1>🔍 InternAlert</h1>
+                <button class="hamburger" onclick="toggleMenu()">☰</button>
+            </div>
+            <p>Get alerts for your dream internship</p>
+        </div>
+        
+        <!-- Search Bar -->
+        <input type="text" id="search" placeholder="Search internships...">
+        <button onclick="searchInternships()">Search</button>
+        
+        <!-- Filter & Sort Section -->
+        <div class="filters">
+            <select id="location">
+                <option>All Locations</option>
+                <option>Remote</option>
+                <option>Mumbai</option>
+                <option>Bangalore</option>
+                <option>Delhi</option>
+                <option>Chennai</option>
+                <option>Pune</option>
+            </select>
+            
+            <select id="field">
+                <option>All Fields</option>
+                <option>Tech</option>
+                <option>Marketing</option>
+                <option>Finance</option>
+                <option>Design</option>
+                <option>Sales</option>
+            </select>
+
+            <select id="sort">
+                <option value="">Sort by...</option>
+                <option value="stipendDesc">Highest Stipend</option>
+                <option value="stipendAsc">Lowest Stipend</option>
+                <option value="titleAsc">Title A-Z</option>
+            </select>
+
+            <input type="text" id="skillFilter" placeholder="Filter by skill...">
+            
+            <select id="sourceFilter">
+                <option value="">All Sources</option>
+                <option value="LinkedIn">LinkedIn</option>
+                <option value="Indeed">Indeed</option>
+            </select>
+
+            <label style="display: flex; align-items: center; gap: 5px;">
+                <input type="checkbox" id="intermediateOnly"> Intermediate+ only
+            </label>
+        </div>
+
+        <!-- View Saved Button -->
+        <button class="view-saved-btn" onclick="showSaved()">⭐ View Saved Internships</button>
+
+        <!-- Saved Items (Hidden by default) -->
+        <div id="bookmark-list" class="bookmark-list">
+            <h3>Saved Internships</h3>
+            <button onclick="hideSaved()">Hide</button>
+            <div id="saved-items">
+                <!-- Saved internships will appear here -->
+            </div>
+        </div>
+        
+        <!-- Internship List -->
+        <div id="internship-list">
+            <!-- Jobs will appear here -->
+        </div>
+        
+        <!-- Alert Form -->
+        <div class="alert-form">
+            <h3>Create Alert</h3>
+            <input type="email" id="email" placeholder="Your email">
+            <input type="text" id="keywords" placeholder="Skills (comma separated)">
+            <button onclick="createAlert()">Get Alerts</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
